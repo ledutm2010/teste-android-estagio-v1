@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:id="@+id/selecione_tipo_busca"
+            android:layout_margin="5dp"
+            android:text="Selecione o tipo de busca: "
+            tools:ignore="MissingConstraints" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:id="@+id/radiogroup"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/selecione_tipo_busca"
+            tools:layout_editor_absoluteX="-16dp">
+                <RadioButton
+                    android:id="@+id/radio_todos_veiculos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:checked="true"
+                    android:text="Todos Veículos" />
+                <RadioButton
+                    android:id="@+id/radio_parada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Parada" />
+                <RadioButton
+                    android:id="@+id/radio_chegada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Chegada" />
+        </RadioGroup>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:id="@+id/edt_codLinha"
+            android:hint="Informe o código da linha"
+            android:layout_margin="5dp"
+            android:visibility="invisible"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@+id/radiogroup"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/edt_codParada"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            android:hint="Informe o código da Paradda"
+            android:visibility="invisible"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@+id/edt_codLinha"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:id="@+id/btn_filtrar"
+            android:text="Filtrar"
+            app:layout_constraintBottom_toTopOf="@+id/maps"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edt_codLinha"
+            app:layout_constraintTop_toBottomOf="@+id/radiogroup" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/maps"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="590dp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_codParada"
+            app:layout_constraintVertical_bias="1.0"></androidx.fragment.app.FragmentContainerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
