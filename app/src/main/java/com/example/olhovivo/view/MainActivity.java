@@ -30,7 +30,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
     private ApiOlhoVivoController apiOlhoVivoController;
-
     private ArrayList<Linha> arrayListaLinhas;
     private ArrayList<Parada> arrayListaParadas;
     private ArrayList<Veiculo> arrayListaVeiculos;
